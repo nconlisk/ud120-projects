@@ -14,7 +14,9 @@ import sys
 from time import time
 sys.path.append("../tools/")
 from email_preprocess_v3 import preprocess
-
+sys.path.remove("../tools/")
+sys.path.append("../choose_your_own")
+from class_vis import prettyPicture
 
 ### features_train and features_test are the features for the training
 ### and testing datasets, respectively
@@ -42,6 +44,7 @@ accuracy = clf.score(features_test, labels_test)
 
 print("prediction accuracy: ", accuracy)
 
+prettyPicture(clf, features_test, labels_test)
 #########################################################
 
 
